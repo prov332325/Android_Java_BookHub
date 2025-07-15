@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/custom_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제목, 작가, 책 소개, 출판사 정보는 필수 입니다"
+        android:textSize="16sp"
+        android:fontFamily="@font/laundry_regular"
+        android:textColor="@android:color/black" />
+</LinearLayout>

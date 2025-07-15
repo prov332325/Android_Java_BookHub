@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_arrowleft"
+        android:background="@color/main"
+        app:titleTextAppearance="@style/ToolbarTheme"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <!--    회원 정보 - 프로필 사진, 닉네임, 팔로워 팔로잉 수, 설정버튼 (편집하기/팔로우, 1:1채팅)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        >
+
+
+        <!--        프로필 사진 -->
+        <ImageView
+            android:id="@+id/profile_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/ic_launcher_round"
+            />
+
+        <!--        닉네임, 팔로잉 팔로워 수-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            >
+            <!--            닉네임-->
+            <TextView
+                android:id="@+id/profile_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="닉네임"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                />
+
+
+            <!--            팔로잉 팔로워 수-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:id="@+id/profile_follower_cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:text="팔로워 0명"
+                    android:textSize="17dp"
+                    />
+
+                <TextView
+                    android:id="@+id/profile_following_cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="팔로잉 0명"
+                    android:textSize="17dp"
+                    />
+            </LinearLayout>
+            <!--            팔로워 팔로잉 끝-->
+
+        </LinearLayout>
+        <!--        닉네임, 팔로워 팔로잉 끝 -->
+
+
+
+        <!--        팔로잉, 1:1 채팅 -  다른 회원일 경우 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="4"
+            android:gravity="end"
+            >
+
+            <!--            팔로우 버튼 누를 때, text color, background 변경해주기 -->
+            <Button
+                android:id="@+id/profile_follow_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/shape_rectangle_green_background"
+                android:text="팔로우 하기"
+                android:textColor="@color/white"
+                />
+
+            <Button
+                android:id="@+id/profile_chatting_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/shape_rectangle_black_line"
+                android:text="1 : 1 채팅"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+        <!--        팔로잉, 1:1 채팅 끝-->
+
+    </LinearLayout>
+
+
+    <!--    내 소개글-->
+
+    <TextView
+        android:id="@+id/profile_user_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="bio 작업해주기"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:visibility="gone"
+        />
+
+
+    <!--    읽은 책, 읽고 있는 책, 읽고 싶은 책-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="3dp"
+        android:background="@drawable/shape_rectangle_gray_round"
+        >
+
+        <!--       읽은 책 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="읽은 책"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/profile_read_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+
+        <!--       읽고 있는 책 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="읽고 있는 책"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/profile_reading_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+
+
+        <!--       읽고 싶은 책 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="읽고 싶은 책"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:id="@+id/profile_want_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/board_board"
+            android:text="작성 게시글"
+            android:textColor="@color/black"
+            android:textSize="21dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" /> <!-- 빈 공간을 차지하게 만듦 -->
+
+        <TextView
+            android:id="@+id/profile_board_cnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="0 개"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profile_board_list_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbars="vertical"
+        android:requiresFadingEdge="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+
+
+</LinearLayout>

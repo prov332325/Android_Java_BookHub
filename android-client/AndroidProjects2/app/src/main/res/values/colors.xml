@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main">#8FD197</color>
+    <color name="hint_text">#C2C2C2</color>
+    <color name="verified">#006C5F</color>
+    <color name="search_box">#D9D9D9</color>
+    <color name="search_text">#867474</color>
+    <color name="book_save">#B5B3B3</color>
+    <color name="board_create">#746B6B</color>
+
+
+</resources>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_arrowleft"
+        android:background="@color/main"
+        app:titleTextAppearance="@style/ToolbarTheme"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="프로필 편집"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textAlignment="center"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+<!--   프사 -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/user_profileImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@mipmap/ic_launcher_round"
+        />
+
+    <ImageView
+        android:id="@+id/btn_edit_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/icon_edit" />
+
+</LinearLayout>
+
+
+
+
+<!--    이메일 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 (ID)"
+            android:fontFamily="@font/laundry_regular"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            android:background="@null"
+            />
+
+        <EditText
+            android:id="@+id/user_emailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="bhoney9856@naver.com"
+            android:fontFamily="@font/laundry_regular"
+            android:textSize="20dp"
+            android:textColor="@color/search_text"
+            android:focusableInTouchMode = "false"
+            android:background="@null"
+            />
+
+
+    </LinearLayout>
+
+
+<!--    닉네임 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            />
+
+
+            <ImageView
+                android:id="@+id/btn_edit_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/icon_edit"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+            <EditText
+                android:id="@+id/user_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="bhoney9856@naver.com"
+                android:textSize="20dp"
+                android:textColor="@color/search_text"
+                android:fontFamily="@font/laundry_regular"
+                android:focusableInTouchMode = "false"
+                android:background="@null"
+                />
+
+    </LinearLayout>
+
+
+<!--    소개 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소개"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            />
+
+        <ImageView
+            android:id="@+id/btn_edit_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icon_edit"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <!--    저장 버튼 -->
+
+
+    <EditText
+        android:id="@+id/user_description"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_rectangle_gray_round"
+        android:fontFamily="@font/laundry_regular"
+        android:gravity="top|start"
+        android:padding="10dp"
+        android:focusableInTouchMode = "false" />
+
+    <Button
+        android:id="@+id/edit_save_btn"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        android:layout_gravity="center"
+        android:background="@color/main"
+        android:text="저장"
+        android:textSize="22dp"
+        />
+
+
+
+</LinearLayout>

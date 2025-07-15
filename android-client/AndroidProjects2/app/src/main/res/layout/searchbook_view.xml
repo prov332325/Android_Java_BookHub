@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_arrowleft"
+        android:background="@color/main"
+        app:titleTextAppearance="@style/ToolbarTheme"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/bookView_save_btn"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="end"
+        android:background="@color/main"
+        android:text="저장"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/bookView_title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:maxLines="2"
+        android:text="우리가 빛의 속도로 갈 수 없다면"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="23dp" />
+
+    <ImageView
+        android:id="@+id/bookView_cover"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+         />
+
+    <TextView
+        android:id="@+id/bookView_author_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:text="김초엽 (지은이)"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        />
+
+
+<!--    책 소개-->
+    <TextView
+        android:id="@+id/bookView_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="책 소개"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/bookView_description_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="2017년 관내분실과 우리가 빛의 속도로 갈 수 없다면 으로 제 2회 한국 과학"
+        android:textSize="15dp"
+        />
+
+
+<!--출판사 -->
+    <TextView
+        android:id="@+id/bookView_pub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="출판사"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <TextView android:id="@+id/bookView_pub_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="허블"
+        android:textSize="15dp"
+        />
+
+<!--ISBN -->
+    <TextView
+        android:id="@+id/bookView_isbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="ISBN"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+
+    <TextView
+        android:id="@+id/bookView_isbn_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="KA62624dfd2564651"
+        android:textSize="15dp"
+        />
+
+
+
+
+
+
+
+
+
+</LinearLayout>

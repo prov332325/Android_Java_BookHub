@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1044772563778",
+    "project_id": "book-hub-441d4",
+    "storage_bucket": "book-hub-441d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044772563778:android:0a70215017ad365f9bf6db",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC8NNzkCcrxnvpGwJCwIuZs0oM91NEJWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

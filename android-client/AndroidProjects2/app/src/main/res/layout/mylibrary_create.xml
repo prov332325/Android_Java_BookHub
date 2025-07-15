@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_arrowleft"
+        android:background="@color/main"
+        app:titleTextAppearance="@style/ToolbarTheme"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="책 검색"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textAlignment="center"
+            />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+<!--    읽은책, 읽고 있는책, 읽고 싶은 책-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/book_alreadyread_btn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="읽은책"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rectangle_gray_round"
+            />
+
+        <Button
+            android:id="@+id/book_reading_btn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="읽고 있는 책"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            />
+
+        <Button
+            android:id="@+id/book_wantread_btn"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="읽고 싶은 책"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            />
+
+    </LinearLayout>
+    <!--    읽은책, 읽고 있는책, 읽고 싶은 책 끝 -->
+
+
+
+<!--    읽은 책 시작-->
+    <LinearLayout
+        android:id="@+id/book_already_layout"
+        android:layout_marginTop="40dp"
+        android:layout_width="380dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/shape_rectangle_gray_round"
+        android:visibility="gone"
+        >
+
+
+<!--        시작일-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="시작일"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                />
+
+        <TextView
+            android:id="@+id/ar_date_started"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            android:text="2024.01.05"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
+
+
+
+<!--        종료일-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="종료일"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/ar_date_finished"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            android:text="2024.01.05"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
+
+
+<!--        평점을 남겨주세요!-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:text="평점을 남겨주세요!"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+
+        <RatingBar
+            android:id="@+id/ar_ratingstar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:rating="2.5"
+            android:stepSize="0.5"/>
+
+        <TextView
+            android:id="@+id/ratingValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:text="(총 2.5점 / 5점)"
+            android:textSize="17dp"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+<!--    읽은 책 끝 -->
+
+
+    <!--    읽고 있는책 책 시작-->
+    <LinearLayout
+        android:id="@+id/book_reading_layout"
+        android:layout_marginTop="60dp"
+        android:layout_width="380dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/shape_rectangle_gray_round"
+        >
+
+        <!--        읽은 페이지-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="읽은 페이지"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+
+<!--        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            >
+
+
+        <EditText
+            android:id="@+id/reading_page"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            android:hint="페이지 수를 입력해주세요"
+            android:fontFamily="@font/laundry_regular"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:text="쪽"
+            android:textSize="20dp"
+            />
+    </LinearLayout>
+
+
+
+        <!--        시작일-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="시작일"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/reading_started"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rectangle_moregray_round"
+            android:text="2024.01.05"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
+
+
+        <!--       읽은지 ~일 됐어요-->
+        <TextView
+            android:id="@+id/reading_been"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:text="시작일을 선택해 주세요"
+            android:textColor="#6B6161"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+    <!--    읽고 있는 책 끝 -->
+
+
+
+<!--    읽고 싶은 책 시작 -->
+    <LinearLayout
+        android:id="@+id/book_want_layout"
+        android:layout_marginTop="60dp"
+        android:layout_width="380dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/shape_rectangle_gray_round"
+        >
+
+        <!--        기대지수-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="기대지수"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+        <RatingBar
+            android:id="@+id/want_ratingstar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:rating="2.5"
+            android:stepSize="0.5"/>
+
+        <TextView
+            android:id="@+id/ratingValue_want"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:text="(총 2.5점 / 5점)"
+            android:textSize="17dp"
+            android:textAlignment="center"
+            />
+
+
+        <!--        기대평-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="기대평"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/want_preview"
+            android:layout_width="330dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rectangle_white"
+            android:textColor="@color/black"
+            android:fontFamily="@font/laundry_regular"
+            android:padding="10dp"
+            android:gravity="top|start"
+            />
+
+    </LinearLayout>
+    <!--    읽고 싶은 책 끝 -->
+
+
+<!--    저장 버튼 -->
+    <Button
+        android:id="@+id/mylibrary_save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/main"
+        android:layout_gravity="center"
+        android:text="저장"
+        />
+
+
+
+</LinearLayout>

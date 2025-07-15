@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_arrowleft"
+        android:background="@color/main"
+        app:titleTextAppearance="@style/ToolbarTheme"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textAlignment="center"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+<!--    수정, 삭제 버튼 묶음 -->
+
+<!--    layout gravity : 레이아웃 통째의 위치 레이아웃 자체의 부모 내에서 위치를 정함-->
+<!--    gravity : 레이아웃 내에 존재하는 아이템들의 위치를 정함. -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        >
+
+        <Button
+            android:id="@+id/mylibrary_modify"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:text="수정"
+            android:background="@color/main"
+            />
+
+        <Button
+            android:id="@+id/mylibrary_delete"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:text="삭제"
+            android:background="@color/main"
+            />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/mylibrary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:text="우리가 빛의 속도로 갈 수 없다면"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/mylibrary_cover"
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/mylibrary_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:text="김초엽 (지은이)"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        />
+
+<!--    type에 따라 텍스트 다르게 <읽은 책, 읽고 있는 책, 읽고 싶은 책> -->
+    <TextView
+        android:id="@+id/mylibrary_type"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="2dp"
+        android:layout_gravity="center"
+        android:text="읽은 책"
+        android:textAlignment="center"
+        android:background="@drawable/shape_rectangle_main_round"
+        />
+
+
+    <!--    type - 읽고 있는 책 view -->
+    <!--    읽은 책 끝 -->
+
+
+            <!--    읽고 있는 책 -->
+            <LinearLayout
+                android:id="@+id/mylibrary_view_already"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="평점"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/already_ratingstar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:numStars="5"
+                    android:rating="2.5"
+                    android:stepSize="0.5" />
+
+
+                <!--         독서 기간-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_weight="2"
+                        android:text="독서 기간"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="4"></View>
+
+                    <TextView
+                        android:id="@+id/already_howlong"
+                        android:layout_width="160dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/shape_rectangle_main_round"
+                        android:paddingTop="2dp"
+                        android:text="3000일 동안 읽었어요"
+                        android:textAlignment="center"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+                <!--        시작일과 종료일 -->
+                <LinearLayout
+                    android:layout_width="340dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shape_rectangle_gray_round"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="25dp"
+                        android:text="시작"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/already_started"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:text="2024.08.10"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="60dp"
+                        android:text="종료"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/already_finished"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:text="2024.08.10"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <!--        시작, 종료 끝 -->
+
+
+                <View
+                    android:id="@+id/divider_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@android:color/darker_gray" />
+
+
+                <!--    책 소개-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="책 소개"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/already_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:text="2017년 관내분실과 우리가 빛의 속도로 갈 수 없다면 으로 제 2회 한국 과학"
+                    android:textSize="15dp" />
+
+
+                <!--출판사 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="출판사"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/already_publish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:text="허블"
+                    android:textSize="15dp" />
+
+                <!--ISBN -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+
+                    android:text="ISBN"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/already_isbn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="KA62624dfd2564651"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+        android:id="@+id/mylibrary_view_reading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <!--         독서 기간-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="2"
+                android:text="독서 기간"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="3"></View>
+
+            <TextView
+                android:id="@+id/reading_been"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_rectangle_main_round"
+                android:paddingTop="2dp"
+                android:text="3000일 째 읽는 중"
+                android:textAlignment="center"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+<!--        읽고 있는 책 독서 기간 끝 -->
+
+        <!--        시작일과 종료일 -->
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_rectangle_gray_round"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:text="시작"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/reading_started"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text="2024.08.10"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:text="종료"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/reading_finished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text="-"
+                android:textColor="@color/black" />
+        </LinearLayout>
+        <!--        시작, 종료 끝 -->
+
+
+
+        <!--         읽은 페이지 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="2"
+                android:text="읽은 페이지"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="4"></View>
+
+        </LinearLayout>
+        <!--        읽고 있는 책 - 독서량 (읽은 페이지) -->
+
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_rectangle_gray_round"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:text="현재"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/reading_pageCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text=" 50"
+                android:textSize="17dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text="페이지 읽는 중"
+                android:textSize="15dp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+<!--        읽은 페이지 끝 -->
+
+        <View
+            android:id="@+id/divider_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <!--    책 소개-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="책 소개"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/reading_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:text="2017년 관내분실과 우리가 빛의 속도로 갈 수 없다면 으로 제 2회 한국 과학"
+            android:textSize="15dp" />
+
+
+        <!--출판사 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="출판사"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/reading_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:text="허블"
+            android:textSize="15dp" />
+
+        <!--ISBN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="ISBN"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/reading_isbn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:text="KA62624dfd2564651"
+            android:textSize="15dp" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <!--    type - 읽고 싶은 책 view -->
+    <LinearLayout
+        android:id="@+id/mylibrary_view_want"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="기대 평점"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/want_ratingstar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:rating="2.5"
+            android:stepSize="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="기대평"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/want_preview"
+            android:layout_width="330dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rectangle_gray"
+            android:textColor="@color/black"
+            android:fontFamily="@font/laundry_regular"
+            android:padding="10dp"
+            android:gravity="top|start"
+            />
+
+
+
+        <View
+            android:id="@+id/divider_line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="책 소개"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/want_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:text="2017년 관내분실과 우리가 빛의 속도로 갈 수 없다면 으로 제 2회 한국 과학"
+            android:textSize="15dp" />
+
+
+        <!--출판사 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="출판사"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/want_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:text="허블"
+            android:textSize="15dp" />
+
+        <!--ISBN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="ISBN"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/want_isbn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="40dp"
+            android:text="KA62624dfd2564651"
+            android:visibility="gone"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
