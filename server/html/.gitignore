@@ -1,0 +1,32 @@
+# 환경 변수 파일 (매우 중요!)
+.env
+
+# 로그 파일
+*.log
+/logs/
+
+# PHP 관련
+/vendor/ # Composer 의존성 (있다면)
+composer.lock # Composer lock 파일 (선택 사항, 보통 포함)
+phpinfo.php # 이 파일을 Git에서 제외하고 싶다면 추가 (보안상 권장)
+
+# IDE 및 OS 관련 파일
+.idea/ # IntelliJ IDEA
+.vscode/ # VS Code
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# 빌드/임시 파일
+/build/
+/tmp/
+*.tmp
+*.swp
+*.swo
+
+# Gradle 관련 (안드로이드 프로젝트가 아니므로 PHP 백엔드에서는 필요 없을 수 있음)
+.gradle/
+gradlew
+gradlew.bat
+local.properties
+.gradle/
+/build/

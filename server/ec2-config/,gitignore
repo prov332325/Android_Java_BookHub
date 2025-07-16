@@ -1,0 +1,6 @@
+# EC2 설정 관련 .gitignore
+
+*.pem        # AWS 키 파일
+.env         # 환경 변수 파일 (만약 이 폴더에 환경 변수가 있다면)
+credentials  # AWS Credentials 파일
+# 기타 민감하거나 불필요한 파일
